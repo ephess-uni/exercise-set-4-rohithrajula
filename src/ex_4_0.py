@@ -13,7 +13,12 @@ def get_shutdown_events(logfile):
     """
     Your docstring here.  Replace the pass keyword below with your implementation
     """
-    pass
+    logs=[]
+    with open(logfile) as file:
+        for l in file:
+            if 'supybot Shutdown initiated' in l:
+                logs.append(l)
+    return logs
 
 
 # >>>> The code below will call your function and print the results
