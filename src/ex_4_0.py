@@ -15,9 +15,9 @@ def get_shutdown_events(logfile):
     """
     logs=[]
     with open(logfile) as f:
-         for line in f:
+        for line in f:
             sentence = line.rstrip('\n')
-         for i in sentence:
+        for i in sentence:
             if 'supybot Shutdown initiated' in i:
                 logs.append(i)
     return logs
