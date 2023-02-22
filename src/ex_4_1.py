@@ -17,7 +17,11 @@ def num_shutdowns(logfile):
     """
     Your docstring here.  Replace the pass keyword below with your implementation.
     """
-    pass
+    c =0
+    with open(logfile) as file:
+        for l in file:
+            c=c+l.count("Shutdown")        
+    return c/2
 
 
 # >>>> The code below will call your function and print the results
