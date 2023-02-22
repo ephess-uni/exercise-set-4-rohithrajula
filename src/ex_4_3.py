@@ -20,10 +20,9 @@ def time_between_shutdowns(logfile):
     Your docstring here.  Replace the pass keyword below with your implementation.
     """
     events = get_shutdown_events(logfile)
-    event_logs = events
-    biginingtime= logstamp_to_datetime(event_logs[0].split(' ')[1])
+    biginingtime= logstamp_to_datetime(events[0].split(' ')[1])
     starttime = biginingtime
-    endingtime= logstamp_to_datetime(event_logs[-1].split(' ')[1])
+    endingtime= logstamp_to_datetime(events[-1].split(' ')[1])
     lasttime = endingtime
     time_difference = starttime - lasttime
     return time_difference
